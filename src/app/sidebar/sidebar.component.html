@@ -1,0 +1,198 @@
+<div class="sidebar sidebar-top">
+    <ul class="nav nav-tabs" id="myTab" role="tablist">
+        <li class="nav-item" role="presentation">
+            <button class="nav-link active" id="home-tab" data-bs-toggle="tab"
+                data-bs-target="#home-tab-pane" type="button" role="tab" aria-controls="home-tab-pane"
+                aria-selected="true">Text to Image</button>
+        </li>
+        <li class="nav-item" role="presentation">
+            <button class="nav-link" id="profile-tab" data-bs-toggle="tab"
+                data-bs-target="#profile-tab-pane" type="button" role="tab" aria-controls="profile-tab-pane"
+                aria-selected="false">Image to Image</button>
+        </li>
+
+    </ul>
+    <div class="tab-content" id="myTabContent">
+        <!--text to Image-->
+        <div class="tab-pane fade show active" id="home-tab-pane" role="tabpanel" aria-labelledby="home-tab"
+            tabindex="0">
+            <div class="form-group" id="textTotext">
+                <div class="accordion sectionToDisable mt-4" id="accordionGraphicDetails">
+                    <div class="card">
+                        <div class="card-header" id="headingGraphicDetails">
+                            <h2 class="mb-0">
+                                <button class="btn btn-link" type="button" data-bs-toggle="collapse"
+                                    data-bs-target="#collapseGraphicDetails" aria-expanded="true"
+                                    aria-controls="collapseGraphicDetails">
+                                    Provide the following details
+                                </button>
+                            </h2>
+                        </div>
+                        <div id="collapseGraphicDetails" class="collapse show"
+                            aria-labelledby="headingGraphicDetails" data-parent="#accordionGraphicDetails">
+                            <div class="card-body">
+                                <div class="form-group mb-2">
+                                    <select class="form-select form-select-lg"
+                                        aria-label=".form-select-lg example">
+                                        <option selected>Specify Business Domain</option>
+                                        <option value="1">Finance</option>
+                                        <option value="2">Technology</option>
+                                        <option value="3">Healthcare</option>
+                                    </select>
+                                </div>
+                                <div class="form-group mb-2">
+                                    <select class="form-select form-select-lg"
+                                        aria-label=".form-select-lg example">
+                                        <option selected>Image Category (Process / Product Category)
+                                        </option>
+                                        <option value="process">Process Category</option>
+                                        <option value="product">Product Category</option>
+                                    </select>
+                                </div>
+                                <div class="form-group mb-2">
+                                    <textarea rows="3" cols="30" class="w-100 specify-area"
+                                        placeholder="Specify Customer Segment to target"></textarea>
+                                </div>
+                                <div class="form-group mb-2">
+                                    <textarea rows="3" cols="30" class="w-100 specify-area"
+                                        placeholder="Define the purpose Behavioral aspect"></textarea>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+
+                <div class="accordion sectionToDisable" id="accordionAspectRatio">
+                    <div class="card">
+                        <div class="card-header" id="headingAspectRatio">
+                            <h2 class="mb-0">
+                                <button class="btn btn-link" type="button" data-bs-toggle="collapse"
+                                    data-bs-target="#collapseAspectRatio" aria-expanded="true"
+                                    aria-controls="collapseAspectRatio">
+                                    Aspect Ratio
+                                </button>
+                            </h2>
+                        </div>
+
+                        <div id="collapseAspectRatio" class="collapse show"
+                            aria-labelledby="headingAspectRatio" data-parent="#accordionAspectRatio">
+                            <div class="card-body">
+                                <select class="form-select" id="aspectRatioSelect">
+                                    <option value="1:1">Square 1:1</option>
+                                    <option value="4:3">Landscape 4:3</option>
+                                    <option value="3:4">Portrait 3:4</option>
+                                    <option value="16:9">Wide 16:9</option>
+                                    <option value="9:16">Tall 9:16</option>
+                                </select>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+
+
+
+                <div class="accordion sectionToDisable" id="accordionDPI">
+                    <div class="card">
+                        <div class="card-header" id="headingDPI">
+                            <h2 class="mb-0">
+                                <button class="btn btn-link" data-bs-toggle="collapse"
+                                    data-bs-target="#collapseDPI" aria-expanded="true"
+                                    aria-controls="collapseDPI">
+                                    Select DPI
+                                </button>
+                            </h2>
+                        </div>
+
+                        <div id="collapseDPI" class="collapse show" aria-labelledby="headingDPI"
+                            data-parent="#accordionDPI">
+                            <div class="card-body">
+                                <select class="form-select" id="dpiSelect">
+                                    <option value="100">100 DPI</option>
+                                    <option value="200">200 DPI</option>
+                                    <option value="300">300 DPI</option>
+                                </select>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="accordion sectionToDisable" id="accordionColorDepth">
+                    <div class="card">
+                        <div class="card-header" id="headingColorDepth">
+                            <h2 class="mb-0">
+                                <button class="btn btn-link collapsed" data-bs-toggle="collapse"
+                                    data-bs-target="#collapseColorDepth" aria-expanded="false"
+                                    aria-controls="collapseColorDepth">
+                                    Colour Depth
+                                </button>
+                            </h2>
+                        </div>
+
+                        <div id="collapseColorDepth" class="collapse" aria-labelledby="headingColorDepth"
+                            data-parent="#accordionColorDepth">
+                            <div class="card-body">
+                                <select class="form-select" id="colorDepthSelect">
+                                    <option value="8">8-bit</option>
+                                    <option value="16">16-bit</option>
+                                    <option value="24">24-bit</option>
+                                    <option value="32">32-bit</option>
+                                </select>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="accordion sectionToDisable" id="accordionResolution">
+                    <div class="card">
+                        <div class="card-header" id="headingResolution">
+                            <h2 class="mb-0">
+                                <button class="btn btn-link collapsed" data-bs-toggle="collapse"
+                                    data-bs-target="#collapseResolution" aria-expanded="false"
+                                    aria-controls="collapseResolution">
+                                    Select Resolution
+                                </button>
+                            </h2>
+                        </div>
+
+                        <div id="collapseResolution" class="collapse" aria-labelledby="headingResolution"
+                            data-parent="#accordionResolution">
+                            <div class="card-body">
+                                <select class="form-select" id="resolutionSelect">
+                                    <option value="480p">480p</option>
+                                    <option value="720p">720p</option>
+                                    <option value="1080p">1080p</option>
+                                    <option value="1440p">1440p</option>
+                                    <option value="2160p">2160p</option>
+                                </select>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+
+                <button class="btn btn-primary generate-button sectionToDisable w-100"
+                    id="confirmButton" (click)="toggle()"><svg xmlns="http://www.w3.org/2000/svg" width="21" height="20"
+                        fill="none">
+                        <path
+                            d="M13.72 8.386l.54 2.239c.124.515.387.961.755 1.307s.844.593 1.392.709l2.384.507c.229.048.372.262.321.476-.037.155-.166.269-.321.302l-2.384.507a2.9 2.9 0 0 0-1.392.709c-.367.346-.631.792-.755 1.307l-.54 2.239c-.051.215-.279.35-.507.302-.165-.035-.286-.156-.321-.302l-.54-2.239a2.62 2.62 0 0 0-.755-1.307c-.369-.346-.844-.593-1.391-.71l-2.385-.507c-.229-.048-.373-.262-.321-.477.037-.155.166-.269.321-.302l2.384-.507a2.9 2.9 0 0 0 1.392-.709c.367-.346.631-.792.755-1.307l.54-2.239c.051-.215.279-.35.507-.302.165.035.287.156.321.302zm2.492-7.074l.249 1.035a1.02 1.02 0 0 0 .297.508 1.12 1.12 0 0 0 .523.262l1.102.234c.229.048.373.262.321.476-.037.155-.166.269-.322.302l-1.102.234c-.21.045-.392.139-.532.27s-.241.304-.288.5l-.25 1.035c-.051.215-.279.35-.507.302-.165-.035-.287-.156-.321-.302l-.25-1.035c-.047-.197-.148-.368-.287-.5a1.12 1.12 0 0 0-.532-.27l-1.102-.234c-.229-.048-.373-.262-.321-.476.037-.155.166-.269.322-.302l1.102-.234a1.12 1.12 0 0 0 .54-.279 1.01 1.01 0 0 0 .279-.491l.25-1.035c.051-.215.279-.35.507-.302.165.035.287.156.321.302zM7.133 3.007l.38 1.576a1.73 1.73 0 0 0 .498.862l.018.018c.24.218.547.375.9.45l1.678.356c.229.048.372.262.321.476-.037.155-.166.269-.321.302l-1.678.357c-.362.077-.675.24-.918.467s-.415.523-.497.863l-.38 1.576c-.051.215-.279.35-.507.302-.165-.035-.287-.156-.321-.302l-.38-1.576a1.73 1.73 0 0 0-.498-.862c-.243-.228-.556-.391-.917-.468l-1.678-.357c-.229-.048-.373-.262-.321-.476.037-.155.166-.269.321-.302l1.678-.356a1.91 1.91 0 0 0 .917-.468l.019-.017a1.73 1.73 0 0 0 .479-.845l.38-1.576c.051-.215.279-.35.507-.302.165.035.287.156.321.302z"
+                            fill="currentColor"></path>
+                    </svg> Confirm text to Image</button>
+            </div>
+
+        </div>
+
+        <!--Image to Image-->
+        <div class="tab-pane fade" id="profile-tab-pane" role="tabpanel" aria-labelledby="profile-tab"
+            tabindex="0">
+        
+        <p>Upload your image in the box</p>
+      
+
+        </div>
+
+    </div>
+
+
+</div>

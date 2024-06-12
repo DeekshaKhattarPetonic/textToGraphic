@@ -1,0 +1,164 @@
+/* Add your custom CSS here */
+
+/* Example CSS for styling */
+.signup-container {   
+    flex-direction: column;
+    height: 100%;
+    width: 100%;
+    z-index: 99;
+    -webkit-app-region: drag;
+    box-sizing: border-box;
+    display: flex;
+    overflow: auto;
+}
+
+.box-container {  
+    background-color: #fff;
+    display: flex;
+    flex-grow: 1;
+    flex-shrink: 0;
+    justify-content: center;
+    min-height: 100vh;
+}
+
+.video-box {
+    background: black;
+    width: 50%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    -webkit-box-pack: center;
+    justify-content: center;
+    text-align: center;
+    overflow: hidden;
+    position: relative;
+}
+
+.video-data {
+    height: 100vh;
+
+}
+
+.content-overlay {
+    padding: 0px 60px;
+    position: absolute;
+    color: #fff;
+    padding: 0px 60px;
+    position: absolute;
+    color: #fff;
+    height: 100%;
+    font-size: 14px;
+    background: rgba(0, 0, 0, 0.3);
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    justify-content: center;
+
+}
+
+.content-overlay p {
+
+    font-size: 16px;
+}
+
+.video-placeholder {
+    object-fit: cover;
+    height: 100%;
+    width: 100%;
+}
+
+
+.signup-form {
+    align-items: center;
+    display: flex;
+    flex-grow: 2;
+    justify-content: center;
+    min-height: 100%;
+    position: relative;
+    background: #fff;
+    box-sizing: border-box;
+    max-width: 100%;
+    padding: 0 1.5em 1.5em;
+    width: 50%;
+    flex-direction: column;
+}
+
+.signup-header h2 {
+    font-size: 1.8em;
+    font-weight: 600;
+    color: rgb(8, 8, 9);
+    text-align: center;
+    margin-bottom: 0;
+}
+
+.signup-header p {
+    font-size: 14px;
+    line-height: 20px;
+    color: rgb(87, 91, 107);
+    word-break: break-word;
+    text-align: center;
+    max-width: 100%;
+    max-height: 100%;
+    -webkit-font-smoothing: antialiased;
+    box-sizing: border-box;
+}
+
+.signup-box {
+    background-color: #fff;
+    width: 400px;
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    padding: 0 0 50px 0;
+}
+
+.form-signup{
+    width: 100%;
+}
+
+.form-signup input[type="text"],
+.form-signup input[type="email"],
+.form-signup input[type="password"]{
+    margin-bottom: 10px;
+    border-radius: 5px;
+    border: 1px solid #ced4da;
+    padding: 10px;
+    width: 100%;
+    font-size: 12px;
+    color: #dedede;
+}
+
+.form-label {
+    font-weight: 400;
+    font-size: 14px;
+}
+
+
+.btn {
+    box-sizing: border-box;
+    padding: 0px;
+    height: 50px;
+    border-radius: 25px;
+    position: relative;
+    cursor: pointer;
+
+}
+
+.login-btn {
+    border: none;
+    background: none;
+    color: blue;
+    cursor: pointer;
+    outline: none;
+}
+
+.login-btn:hover {
+    text-decoration: underline;
+}
+
+@media (max-width: 767px) {
+    .signup-container {
+        padding: 20px;
+    }
+}
