@@ -11,14 +11,14 @@
                 </video>
             </div>
             <div class="content-overlay text-center">
-                <h1>AI Image Generator</h1>
+                <h1>ColorCanvas.AI</h1>
                 <p>All the tools you require to craft any visual you desire. Utilize numerous creative features to brainstorm, create, and refine images in ways you've never imagined before</p>
             </div>
         </div>
         <div class="signup-form">
             <div class="signup-header text-center pt-3">
-                <h2>Welcome to AI Image Generator</h2>
-                <p>Already have an account? <a href="login.html" class="login-btn">Login</a></p>
+                <h2>Welcome to ColorCanvas.AI</h2>
+                <p>Already have an account? <a [routerLink]="['/login']" class="login-btn">Login</a></p>
             </div>
             <!-- Signup Form -->
             <div class="signup-box">
@@ -40,7 +40,7 @@
                         <input type="password" class="form-control" id="confirm_password" placeholder="Confirm your password" required>
                     </div>
                     <div class="d-grid mt-3">
-                        <button type="submit" class="btn btn-primary">Signup</button>
+                        <button  [routerLink]="['/generate']" type="submit" class="btn btn-primary">Signup</button>
                     </div>
                 </form>
             </div>

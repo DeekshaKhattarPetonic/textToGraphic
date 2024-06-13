@@ -10,6 +10,12 @@ import { LoginComponent } from './login/login.component';
 import { SignupComponent } from './signup/signup.component';
 import { GenerateComponent } from './generate/generate.component';
 import { SidebarComponent } from './sidebar/sidebar.component';
+import { PricingComponent } from './pricing/pricing.component';
+import { CarouselModule } from 'primeng/carousel';
+import { ButtonModule } from 'primeng/button';
+import { TagModule } from 'primeng/tag';
+import { DialogModule } from 'primeng/dialog';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 @NgModule({
   declarations: [
@@ -20,11 +26,17 @@ import { SidebarComponent } from './sidebar/sidebar.component';
     LoginComponent,
     SignupComponent,
     GenerateComponent,
-    SidebarComponent
+    SidebarComponent,
+    PricingComponent
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    CarouselModule,
+    ButtonModule,
+    TagModule,
+    DialogModule,
+    BrowserAnimationsModule
   ],
   providers: [
     provideClientHydration()

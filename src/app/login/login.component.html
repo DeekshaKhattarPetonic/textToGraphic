@@ -11,14 +11,14 @@
                 </video>
             </div>
             <div class="content-overlay text-center">
-                <h1>AI Image Generator</h1>
+                <h1>ColorCanvas.AI</h1>
                 <p>All the tools you require to craft any visual you desire. Utilize numerous creative features to brainstorm, create, and refine images in ways you've never imagined before</p>
             </div>
         </div>
         <div class="login-form">
             <div class="login-header text-center pt-3">
-                <h2>Welcome to AI Image Generator</h2>
-                <p>Don't have an account? <a href="signup.html" class="signup-btn">Sign up for free</a></p>
+                <h2>Welcome to ColorCanvas.AI</h2>
+                <p>Don't have an account? <a [routerLink]="['/signup']"  class="signup-btn">Sign up for free</a></p>
             </div>
             <!-- Login Form -->
             <div class="login-box">
@@ -31,22 +31,22 @@
                         <label for="password" class="form-label">Password</label>
                         <input type="password" class="form-control" id="password" placeholder="Enter your password">
                     </div>
-                    <div class="form-check mb-2">
+                    <!-- <div class="form-check mb-2">
                         <input type="checkbox" class="form-check-input" id="remember">
                         <label class="form-check-label" for="remember">Remember me</label>
-                    </div>
+                    </div> -->
                     <div class="d-grid">
-                        <button type="submit" class="btn btn-primary">Login</button>
+                        <button [routerLink]="['/generate']" type="submit" class="btn btn-primary">Login</button>
                     </div>
                     <div class="form-group mt-2">
                         <a href="#" class=" forgot-password">Forgot password?</a>
                     </div>
                     <hr>
                     <div class="form-group mb-2 btn-google">
-                        <button type="button" class="btn btn-danger w-100"><i class="fab fa-google"></i>Login with Gmail</button>
+                        <button  [routerLink]="['/generate']" type="button" class="btn btn-danger w-100"><i class="fab fa-google"></i>Login with Gmail</button>
                     </div>
                     <div class="form-group">
-                        <button type="button" class="btn btn-primary w-100 btn-facebook"><i class="fab fa-facebook"></i>Login with Facebook</button>
+                        <button  [routerLink]="['/generate']" type="button" class="btn btn-primary w-100 btn-facebook"><i class="fab fa-facebook"></i>Login with Facebook</button>
                     </div>
                 </form>
             </div>

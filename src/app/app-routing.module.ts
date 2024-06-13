@@ -4,15 +4,15 @@ import { LandingPageComponent } from './landing-page/landing-page.component';
 import { LoginComponent } from './login/login.component';
 import { SignupComponent } from './signup/signup.component';
 import { GenerateComponent } from './generate/generate.component';
-
+import { PricingComponent } from './pricing/pricing.component';
 
 const routes: Routes = [
   //{ path: '**', redirectTo: '' },
   { path: '', component: LandingPageComponent },
   { path: 'login', component: LoginComponent },
   { path:'signup', component: SignupComponent },
-  { path: 'generate', component: GenerateComponent }
-  
+  { path: 'generate', component: GenerateComponent },
+  {path: 'pricing', component: PricingComponent}
 ];
 
 @NgModule({
