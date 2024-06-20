@@ -10,7 +10,7 @@ import { SharedService } from '../shared/shared.service';
 
 export class SidebarComponent {
   fileName: string = '';
-  selectedVersion: any ;
+  selectedVersion: any;
   imageSrc: any | ArrayBuffer | null = '';
   showCard: any = false;
   selectedIndustry: any = '';
@@ -28,24 +28,24 @@ export class SidebarComponent {
   imgDpi: any = '';
   area: any = '';
 
-  constructor(private sharedService: SharedService, private contentToggleService: ContentToggleService) {}
+  constructor(private sharedService: SharedService, private contentToggleService: ContentToggleService) { }
 
   toggle() {
     this.contentToggleService.toggle();
   }
 
-  onButtonClick(type: any) {
+  onGenerateImage(type: any) {
     window.scrollTo({ top: 0, behavior: 'smooth' });
     this.sharedService.setVariable(false);
 
 
-    if(type == 'image'){
-       this.sharedService.setMode('imageToImage');
-     this.showImageCard = true;
+    if (type == 'image') {
+      this.sharedService.setMode('imageToImage');
+      this.showImageCard = true;
     }
 
-    if(type == 'text'){
-       this.sharedService.setMode('textToImage');
+    if (type == 'text') {
+      this.sharedService.setMode('textToImage');
       this.showCard = true;
     }
   }
@@ -53,16 +53,16 @@ export class SidebarComponent {
   onFileSelected(event: any): void {
     const file: File = event.target.files[0];
 
-        if (file) {
-            this.fileName = file.name;
+    if (file) {
+      this.fileName = file.name;
 
-            const reader = new FileReader();
-            reader.onload = (e) => {
-                this.imageSrc = e.target?.result;
-                this.sharedService.setUploadedImageUrl(this.imageSrc);
-            };
+      const reader = new FileReader();
+      reader.onload = (e) => {
+        this.imageSrc = e.target?.result;
+        this.sharedService.setUploadedImageUrl(this.imageSrc);
+      };
 
-            reader.readAsDataURL(file);
-        }
+      reader.readAsDataURL(file);
+    }
   }
 }

@@ -20,40 +20,40 @@ export class TextToImageComponent {
   responsiveOptions: any[] | undefined;
   defaultView: any = true;
   products: any = [
-    {image: "../../assets/img/img-3.jpg"},
-    {image: "../../assets/img/img-4.jpg"},
-    {image: "../../assets/img/img-6.jpg"},
-    {image: "../../assets/img/img-7.jpg"},
+    { image: "../../assets/img/img-3.jpg" },
+    { image: "../../assets/img/img-4.jpg" },
+    { image: "../../assets/img/img-6.jpg" },
+    { image: "../../assets/img/img-7.jpg" },
     // {image: "../../assets/img/img-5.jpg"},
     // {image: "../../assets/img/img-3.jpg"},
     // {image: "../../assets/img/img-3.jpg"},
   ]
 
-  constructor(private sharedService: SharedService, public contentToggleService: ContentToggleService) {}
+  constructor(private sharedService: SharedService, public contentToggleService: ContentToggleService) { }
 
-ngOnInit(){
-  this.sharedService.currentVariable.subscribe(value => {
-    this.defaultView = value;
-  });
+  ngOnInit() {
+    this.sharedService.currentVariable.subscribe(value => {
+      this.defaultView = value;
+    });
 
-  this.responsiveOptions = [
-    {
+    this.responsiveOptions = [
+      {
         breakpoint: '1199px',
         numVisible: 3,
         numScroll: 3
-    },
-    {
+      },
+      {
         breakpoint: '991px',
         numVisible: 3,
         numScroll: 3
-    },
-    {
+      },
+      {
         breakpoint: '767px',
         numVisible: 3,
         numScroll: 3
-    }
-];
-}
+      }
+    ];
+  }
 
   showPromptTextArea: boolean = false;
 
@@ -63,57 +63,57 @@ ngOnInit(){
 
   getSeverity(status: string): any {
     switch (status) {
-        case 'INSTOCK':
-            return 'success';
-        case 'LOWSTOCK':
-            return 'warning';
-        case 'OUTOFSTOCK':
-            return 'danger';
+      case 'INSTOCK':
+        return 'success';
+      case 'LOWSTOCK':
+        return 'warning';
+      case 'OUTOFSTOCK':
+        return 'danger';
     }
-}
-
-
-confirm(){
-  // this.showVersion = true
-  this.showConfirmationModal = false
-  this.showVersion = true
-}
-
-showImageVersions(){
-  this.modalText = 'Do you want to proceed?';
-this.showConfirmationModal = true
-  // this.showVersion = true
-  // this.defaultView = true
-}
-
-onVersionChange() {
-  console.log('Selected version:', this.selectedVersion);
-}
-
-onCancel(){
-  this.defaultView = true
-  this.showVersion = false
-}
-
-goBack(){
-  this.defaultView = false;
-  this.showVersion = false;
-}
-
-onImageSelectionChange(event: any) {
-  const selectedImage = event.target.value;
-  // Update `selectedImageSrc` based on the selected image
-  // This is a placeholder, replace with actual logic to set the selected image
-  if (selectedImage === 'image1') {
-    this.selectedImageSrc = '../../assets/img/img-4.jpg';
   }
-  // Add additional conditions for other images
-}
 
-downloadImage() {
-  const link = document.createElement('a');
-  link.href = this.selectedImageSrc;
-  link.download = this.selectedImageSrc.split('/').pop()!;
-  link.click();
-}
+
+  confirm() {
+    // this.showVersion = true
+    this.showConfirmationModal = false
+    this.showVersion = true
+  }
+
+  showImageVersions() {
+    this.modalText = 'Do you want to proceed?';
+    this.showConfirmationModal = true
+    // this.showVersion = true
+    // this.defaultView = true
+  }
+
+  onVersionChange() {
+    console.log('Selected version:', this.selectedVersion);
+  }
+
+  onCancel() {
+    this.defaultView = true
+    this.showVersion = false
+  }
+
+  goBack() {
+    this.defaultView = false;
+    this.showVersion = false;
+  }
+
+  onImageSelectionChange(event: any) {
+    const selectedImage = event.target.value;
+    // Update `selectedImageSrc` based on the selected image
+    // This is a placeholder, replace with actual logic to set the selected image
+    if (selectedImage === 'image1') {
+      this.selectedImageSrc = '../../assets/img/img-4.jpg';
+    }
+    // Add additional conditions for other images
+  }
+
+  downloadImage() {
+    const link = document.createElement('a');
+    link.href = this.selectedImageSrc;
+    link.download = this.selectedImageSrc.split('/').pop()!;
+    link.click();
+  }
 }
