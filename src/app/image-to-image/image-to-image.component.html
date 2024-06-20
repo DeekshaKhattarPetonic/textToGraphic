@@ -1,0 +1,193 @@
+<div class="body-content" *ngIf="!showVersion">
+  <div id="textToImageContainerData">
+      <div class="w-100 genrate-imge-wrapper">
+          <div class="row mb-3" *ngIf="defaultView">
+              <div class="col-md-12">
+                  <h3 class="heading-title text-white fs-5 mb-2 text-center">Generate graphics from <span class="brand">Text or Image</span></h3>
+                </div>
+          </div>
+      </div>
+
+      <div class="album-gallery" id="albumGallery" >
+          <div class="container">
+              <div class="row " *ngIf="defaultView">
+                <div class="slider">
+                  <div class="slider-track">
+                    <div class="slide" *ngFor="let image of products; let i = index" [ngStyle]="{'background-image': 'url(' + image.image + ')'}"></div>
+                  </div>
+                </div>
+                <p class="">Trending Images...</p>
+                <!-- <p-carousel
+                [value]="products"
+                [numVisible]="3"
+                [numScroll]="3"
+                [circular]="true"
+                [autoplayInterval]="3000"
+                [responsiveOptions]="responsiveOptions">
+                <ng-template let-product pTemplate="item">
+                  <div style="margin-right: 10px;" class="col">
+                    <div class="card shadow-sm">
+                      <div class="card-image-box d-flex">
+                        <img [src]="product.image" class="img-fluid" alt="Product Image">
+                      </div>
+                    </div>
+                  </div>
+                </ng-template>
+              </p-carousel> -->
+              </div>
+          </div>
+      </div>
+
+      <div class="row flex wwww w-100 genrate-imge-wrapper mb-3" id="generateImage">
+        <ng-container *ngIf="!defaultView && !showVersion">
+          <!-- <p class="version_para" mt-2>Please select an image for versioning and upscaling</p> -->
+          <div class="image-wrapper images_box mx-0 col-md-8">
+            <div class="image-box d-flex  justify-content-center">
+              <img src="{{uploadedImageUrl}}" width="img-fluid" height="img-fluid" alt="Image 1">
+              <div class="radio-group">
+                <input (change)="onImageSelectionChange($event)" type="radio" name="imageSelection" value="image1"
+                  id="image1Radio" checked="">
+                <label for="image1Radio">Image 1</label>
+              </div>
+            </div>
+            <div class="image-box d-flex  justify-content-center">
+              <img src="{{uploadedImageUrl}}" width="img-fluid" height="img-fluid" alt="Image 2">
+              <div class="radio-group">
+                <input (change)="onImageSelectionChange($event)" type="radio" name="imageSelection" value="image2"
+                  id="image1Radio" checked="">
+                <label for="image1Radio">Image 2</label>
+              </div>
+            </div>
+
+            <div class="image-box d-flex  justify-content-center">
+              <img src="{{uploadedImageUrl}}" width="img-fluid" height="img-fluid" alt="Image 3">
+              <div class="radio-group">
+                <input (change)="onImageSelectionChange($event)" type="radio" name="imageSelection" value="image3"
+                  id="image1Radio" checked="">
+                <label for="image1Radio">Image 3</label>
+              </div>
+            </div>
+
+            <div class="image-box d-flex  justify-content-center">
+              <img src="{{uploadedImageUrl}}" width="img-fluid" height="img-fluid" alt="Image 4">
+              <div class="radio-group">
+                <input (change)="onImageSelectionChange($event)" type="radio" name="imageSelection" value="image4"
+                  id="image1Radio" checked="">
+                <label for="image1Radio">Image 4</label>
+              </div>
+            </div>
+
+          </div>
+        </ng-container>
+
+        <div *ngIf="!defaultView && !showVersion" class="d-flex mt-5 select-for-version col-md-4">
+                      <div class="d-flex w-100 col-gap-10 flex-d-col" >
+                          <p>Choose the best image to proceed :</p>
+                          <div class="form-check version my-2">
+                              <input checked name="flexRadioDefault" [(ngModel)]="selectedOption" [value]="'Select Version'" class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault">
+                              <label class="form-check-label" for="flexRadioDefault1">
+                                  Select Version
+                              </label>
+                              <select class="form-select mt-1" id="versionSelect" [(ngModel)]="selectedVersion" (change)="onVersionChange()">
+                                <option *ngFor="let version of versions" [value]="version">{{ version }}</option>
+                            </select>
+                          </div>
+                          <div class="form-check version mx-0">
+                              <input class="form-check-input" [(ngModel)]="selectedOption" [value]="'Other Version'" type="radio" name="flexRadioDefault2" id="flexRadioDefault2">
+                              <label class="form-check-label" for="flexRadioDefault1">
+                                  Select for up Scaling
+                              </label>
+                          </div>
+                          <button (click)="showImageVersions()" type="submit" class="btn btn-primary generate-button w-15 mt-3" id="generateButton"><svg xmlns="
+                            http://www.w3.org/2000/svg" width="30" height="20" fill="none">
+                            <path d="M13.72 8.386l.54 2.239c.124.515.387.961.755 1.307s.844.593 1.392.709l2.384.507c.229.048.372.262.321.476-.037.155-.166.269-.321.302l-2.384.507a2.9 2.9 0 0 0-1.392.709c-.367.346-.631.792-.755 1.307l-.54 2.239c-.051.215-.279.35-.507.302-.165-.035-.286-.156-.321-.302l-.54-2.239a2.62 2.62 0 0 0-.755-1.307c-.369-.346-.844-.593-1.391-.71l-2.385-.507c-.229-.048-.373-.262-.321-.477.037-.155.166-.269.321-.302l2.384-.507a2.9 2.9 0 0 0 1.392-.709c.367-.346.631-.792.755-1.307l.54-2.239c.051-.215.279-.35.507-.302.165.035.287.156.321.302zm2.492-7.074l.249 1.035a1.02 1.02 0 0 0 .297.508 1.12 1.12 0 0 0 .523.262l1.102.234c.229.048.373.262.321.476-.037.155-.166.269-.322.302l-1.102.234c-.21.045-.392.139-.532.27s-.241.304-.288.5l-.25 1.035c-.051.215-.279.35-.507.302-.165-.035-.287-.156-.321-.302l-.25-1.035c-.047-.197-.148-.368-.287-.5a1.12 1.12 0 0 0-.532-.27l-1.102-.234c-.229-.048-.373-.262-.321-.476.037-.155.166-.269.322-.302l1.102-.234a1.12 1.12 0 0 0 .54-.279 1.01 1.01 0 0 0 .279-.491l.25-1.035c.051-.215.279-.35.507-.302.165.035.287.156.321.302zM7.133 3.007l.38 1.576a1.73 1.73 0 0 0 .498.862l.018.018c.24.218.547.375.9.45l1.678.356c.229.048.372.262.321.476-.037.155-.166.269-.321.302l-1.678.357c-.362.077-.675.24-.918.467s-.415.523-.497.863l-.38 1.576c-.051.215-.279.35-.507.302-.165-.035-.287-.156-.321-.302l-.38-1.576a1.73 1.73 0 0 0-.498-.862c-.243-.228-.556-.391-.917-.468l-1.678-.357c-.229-.048-.373-.262-.321-.476.037-.155.166-.269.321-.302l1.678-.356a1.91 1.91 0 0 0 .917-.468l.019-.017a1.73 1.73 0 0 0 .479-.845l.38-1.576c.051-.215.279-.35.507-.302.165.035.287.156.321.302z" fill="currentColor"></path>
+                        </svg> Next</button>
+                      </div>
+                      <!-- <div class="d-flex flex-column w-25">
+                          <label class="form-label d-flex">Select Number of Image</label>
+                      </div> -->
+                  </div>
+                    </div>
+          </div>
+      </div>
+
+      <div *ngIf="showVersion" class="container-fluid download-image-container mt-4" id="image1" >
+          <div class="row">
+          <div class="col-md-8">
+              <div class="d-flex w-100 gap-1 flex-wrap">
+              <div [ngClass]="{'fullImg': selectedVersion ==1}" *ngIf="selectedVersion >=1" class="card shadow-sm download-image-card">
+                  <div class="image-box image-box-1">
+                      <img src="{{uploadedImageUrl}}" width="img-fluid" height="img-fluid" alt="Image 1">
+                      <div class="radio-group">
+                          <input (change)="onImageSelectionChange($event)" type="radio" name="downloadImage" value="image1" id="image1Radio" checked="">
+                          <label for="image1Radio">Image 1</label>
+                      </div>
+                  </div>
+
+              </div>
+              <div *ngIf="selectedVersion >= 2"  class="card shadow-sm download-image-card">
+                  <div class="image-box image-box-1">
+                      <img src="{{uploadedImageUrl}}" width="img-fluid" height="img-fluid" alt="Image 1">
+                      <div class="radio-group">
+                          <input (change)="onImageSelectionChange($event)" type="radio" name="downloadImage" value="image1" id="image1Radio" checked="">
+                          <label for="image1Radio">Image 2</label>
+                      </div>
+                  </div>
+
+              </div>
+
+              <div *ngIf="selectedVersion >= 3" class="card shadow-sm download-image-card">
+                  <div class="image-box image-box-1">
+                      <img src="{{uploadedImageUrl}}" width="img-fluid" height="img-fluid" alt="Image 1">
+                      <div class="radio-group">
+                          <input (change)="onImageSelectionChange($event)" type="radio" name="downloadImage" value="image1" id="image1Radio" checked="">
+                          <label for="image1Radio">Image 3</label>
+                      </div>
+                  </div>
+              </div>
+
+              <div *ngIf="selectedVersion >= 4" class="card shadow-sm download-image-card">
+                  <div class="image-box image-box-1">
+                      <img src="{{uploadedImageUrl}}" width="img-fluid" height="img-fluid" alt="Image 1">
+
+                      <div class="radio-group">
+                          <input (change)="onImageSelectionChange($event)" type="radio" name="downloadImage" value="image1" id="image1Radio" checked="">
+                          <label for="image1Radio">Image 4</label>
+                      </div>
+                  </div>
+              </div>
+          </div>
+          </div>
+
+          <div class="col-md-4" id="downloadImageFinal">
+              <div class="shadow-sm download-image-final">
+                  <div class="button-container d-flex flex-wrap">
+                    <button (click)="goBack()" id="downloadButton" class="btn btn-primary w-100 mb-2"><i class="fa-solid fa-backward-step"></i> Go Back</button>
+                      <button (click)="downloadImage()" id="downloadButton" class="btn btn-primary w-100 mb-2"><i class="fas fa-download"></i> Download</button>
+                      <!-- <button id="saveButton" class="btn btn-primary w-100 mb-2"><svg xmlns="http://www.w3.org/2000/svg" width="21" height="20" fill="none">
+                          <path d="M13.72 8.386l.54 2.239c.124.515.387.961.755 1.307s.844.593 1.392.709l2.384.507c.229.048.372.262.321.476-.037.155-.166.269-.321.302l-2.384.507a2.9 2.9 0 0 0-1.392.709c-.367.346-.631.792-.755 1.307l-.54 2.239c-.051.215-.279.35-.507.302-.165-.035-.286-.156-.321-.302l-.54-2.239a2.62 2.62 0 0 0-.755-1.307c-.369-.346-.844-.593-1.391-.71l-2.385-.507c-.229-.048-.373-.262-.321-.477.037-.155.166-.269.321-.302l2.384-.507a2.9 2.9 0 0 0 1.392-.709c.367-.346.631-.792.755-1.307l.54-2.239c.051-.215.279-.35.507-.302.165.035.287.156.321.302zm2.492-7.074l.249 1.035a1.02 1.02 0 0 0 .297.508 1.12 1.12 0 0 0 .523.262l1.102.234c.229.048.373.262.321.476-.037.155-.166.269-.322.302l-1.102.234c-.21.045-.392.139-.532.27s-.241.304-.288.5l-.25 1.035c-.051.215-.279.35-.507.302-.165-.035-.287-.156-.321-.302l-.25-1.035c-.047-.197-.148-.368-.287-.5a1.12 1.12 0 0 0-.532-.27l-1.102-.234c-.229-.048-.373-.262-.321-.476.037-.155.166-.269.322-.302l1.102-.234a1.12 1.12 0 0 0 .54-.279 1.01 1.01 0 0 0 .279-.491l.25-1.035c.051-.215.279-.35.507-.302.165.035.287.156.321.302zM7.133 3.007l.38 1.576a1.73 1.73 0 0 0 .498.862l.018.018c.24.218.547.375.9.45l1.678.356c.229.048.372.262.321.476-.037.155-.166.269-.321.302l-1.678.357c-.362.077-.675.24-.918.467s-.415.523-.497.863l-.38 1.576c-.051.215-.279.35-.507.302-.165-.035-.287-.156-.321-.302l-.38-1.576a1.73 1.73 0 0 0-.498-.862c-.243-.228-.556-.391-.917-.468l-1.678-.357c-.229-.048-.373-.262-.321-.476.037-.155.166-.269.321-.302l1.678-.356a1.91 1.91 0 0 0 .917-.468l.019-.017a1.73 1.73 0 0 0 .479-.845l.38-1.576c.051-.215.279-.35.507-.302.165.035.287.156.321.302z" fill="currentColor"></path>
+                      </svg> Save</button> -->
+                      <button (click)="onCancel()" id="cancelButton" class="btn btn-secondary w-100"><i class="fa fa-times" aria-hidden="true"></i> Cancel</button>
+                  </div>
+              </div>
+          </div>
+      </div>
+      </div>
+
+      <p-dialog header="Header" [modal]="true" [(visible)]="showConfirmationModal" [style]="{ width: '25rem' }">
+        <ng-template pTemplate="header">
+          <div class="inline-flex align-items-center justify-content-center gap-2">
+            <img src="../../assets/img/checked.png" />
+            <span class="font-bold white-space-nowrap">
+              Confirmation
+            </span>
+          </div>
+        </ng-template>
+        <p class="p-text-secondary block mt-0 mb-2 proceed_text">
+          {{modalText}}
+        </p>
+        <div class="flex justify-content-end gap-2">
+          <p-button class="cancelBtn" label="Cancel" severity="secondary" (click)="showConfirmationModal = false" />
+          <p-button class="yesBtn" label="Yes" (click)="confirm()" />
+        </div>
+      </p-dialog>

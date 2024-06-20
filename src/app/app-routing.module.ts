@@ -5,14 +5,20 @@ import { LoginComponent } from './login/login.component';
 import { SignupComponent } from './signup/signup.component';
 import { GenerateComponent } from './generate/generate.component';
 import { PricingComponent } from './pricing/pricing.component';
-
+import { LandingPageComponent2 } from './landing-page2/landing-page2.component';
+import { DashboardComponent } from './dashboard/dashboard.component';
+import { ProfileComponent } from './profile/profile.component';
 const routes: Routes = [
   //{ path: '**', redirectTo: '' },
-  { path: '', component: LandingPageComponent },
+  { path: 'home', component: LandingPageComponent },
+  // { path: 'home', component: LandingPageComponent },
   { path: 'login', component: LoginComponent },
   { path:'signup', component: SignupComponent },
   { path: 'generate', component: GenerateComponent },
-  {path: 'pricing', component: PricingComponent}
+  // { path: 'generate-light', component: LandingPageComponent2 },
+  {path: 'pricing', component: PricingComponent},
+  {path: 'dashboard', component: DashboardComponent},
+  {path: 'profile', component: ProfileComponent}
 ];
 
 @NgModule({

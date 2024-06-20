@@ -2,3 +2,15 @@
     background-color: #0d0d0d;
     border-bottom: 1px solid #474747;
 }
+
+.nav-item:hover{
+  border-bottom: 1px solid white;
+}
+.nav-link{
+  padding: 10px 0px;
+  margin: 0px 10px;
+}
+
+.rounded-circle-100{
+  border-radius: 100%;
+}

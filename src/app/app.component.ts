@@ -12,6 +12,9 @@ export class AppComponent {
   isSignUpPage: boolean = true;
   isLandingPage: boolean = false;
   ispricingPage:boolean = false;
+  isGeneratePage: boolean = false;
+  isDashboardPage: boolean = false;
+  isProfilePage: boolean = false;
   constructor(private router: Router,) { }
 
 
@@ -22,8 +25,11 @@ export class AppComponent {
 
         this.isLoginPage = event.url === '/login';
         this.isSignUpPage = event.url === '/signup';
-        this.isLandingPage = event.url === '/';
+        this.isLandingPage = event.url === '/home';
         this.ispricingPage = event.url === '/pricing';
+        this.isGeneratePage = event.url === '/generate-light';
+        this.isDashboardPage = event.url === '/dashboard';
+        this.isProfilePage = event.url === '/profile';
        // this.isMindMapPage = event.url === '/mindmap' || event.url === '/mind-map-new-tab';
         //this.isflowchartPage = event.url === '/flowchart';
       });

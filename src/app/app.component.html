@@ -1,12 +1,9 @@
-<app-header [hidden]="isLoginPage || isSignUpPage || ispricingPage"></app-header>
+<app-header [hidden]="isLoginPage || isSignUpPage || ispricingPage || isDashboardPage"></app-header>
 <main>
     <div class="wrapper" >
-        <app-sidebar [hidden]="isLoginPage || isSignUpPage || isLandingPage || ispricingPage"></app-sidebar>
+        <app-sidebar [ngClass]="{'light_theme': isGeneratePage}" [hidden]="isLoginPage || isDashboardPage || isProfilePage || isSignUpPage || isLandingPage || ispricingPage"></app-sidebar>
         <router-outlet>
         </router-outlet>
     </div>
-    <app-footer  [hidden]="isLoginPage || isSignUpPage || ispricingPage"></app-footer>
+    <app-footer  [hidden]="isLoginPage || isSignUpPage || ispricingPage || isDashboardPage || isProfilePage"></app-footer>
 </main>
-
-
-
