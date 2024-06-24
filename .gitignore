@@ -9,3 +9,6 @@ dev_api/__pycache__/
 
 # Ignore log files
 dev_api/logs/
+
+
+textToGraphic/
