@@ -1,3 +1,8 @@
+"""
+   This code is obsolete, and is not being used anymore.
+   This was originally meant for /non-gen-api/modify_image
+   route (which has been commented) located under data_api.py.
+"""
 from PIL import Image
 import io
 
