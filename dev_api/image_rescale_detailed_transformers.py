@@ -1,3 +1,10 @@
+"""
+    This script contains multiple trials of image specs modification
+    endpoint (mostly) using torchvision and realesrgan libraries.
+
+    All failed as of now.
+"""
+
 
 # First, let's use the `Real-ESRGAN` repository to handle the upscaling. You can add the `Real-ESRGAN` repo to your project:
 
