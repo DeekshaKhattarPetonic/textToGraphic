@@ -1,20 +1,18 @@
-It looks like you're trying to use an ESRGAN model for upscaling the image, but the specific function `esrgan_superres` is not available in the torch hub. Instead, we should integrate the ESRGAN model in another way.
 
-First, let's use the `Real-ESRGAN` repository to handle the upscaling. You can add the `Real-ESRGAN` repo to your project:
+# First, let's use the `Real-ESRGAN` repository to handle the upscaling. You can add the `Real-ESRGAN` repo to your project:
 
-1. Clone the `Real-ESRGAN` repository and install its dependencies:
-    ```bash
-    git clone https://github.com/xinntao/Real-ESRGAN.git
-    cd Real-ESRGAN
-    pip install -r requirements.txt
-    python setup.py develop
-    ```
+# 1. Clone the `Real-ESRGAN` repository and install its dependencies:
+#     ```bash
+#     git clone https://github.com/xinntao/Real-ESRGAN.git
+#     cd Real-ESRGAN
+#     pip install -r requirements.txt
+#     python setup.py develop
+#     ```
 
-2. Download the pre-trained weights for the model, which are available from the Real-ESRGAN GitHub releases page.
+# 2. Download the pre-trained weights for the model, which are available from the Real-ESRGAN GitHub releases page.
 
-Now, you can modify your Python FastAPI script as follows to incorporate the `Real-ESRGAN` for upscaling:
+# Now, you can modify your Python FastAPI script as follows to incorporate the `Real-ESRGAN` for upscaling:
 
-```python
 from fastapi import FastAPI, HTTPException
 from pydantic import BaseModel
 from PIL import Image
